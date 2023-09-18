@@ -9,8 +9,8 @@ Currently, there are multiple subgraphs about Mumbai and Chapel network.
     - Mumbai https://api.thegraph.com/subgraphs/name/nguyenphananhthien0210/subgraph_mumbai
 
 
-2. **[Chapel](https://thegraph.com/hosted-service/subgraph/nguyenphananhthien0210/subgraph_mumbai)**: Tracks all events and entities Demask on Chapel network.
-    - Chapel https://api.thegraph.com/subgraphs/name/nguyenphananhthien0210/subgraph_mumbai
+2. **[Chapel](https://thegraph.com/hosted-service/subgraph/nguyenphananhthien0210/demask-v2-chapel)**: Tracks all events and entities Demask on Chapel network.
+    - Chapel https://api.thegraph.com/subgraphs/name/nguyenphananhthien0210/demask-v2-chapel
 
 ## Dependencies
 
