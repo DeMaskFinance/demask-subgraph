@@ -13,7 +13,7 @@ import {
   VoteUriSubmit as VoteUriSubmitEvent
 } from "../generated/CreatorContract/CreatorContract"
 import {
-  ApprovalForAll,
+  ApprovalForAll, //
   ChangeUriWithVote,
   Launchpad,
   LaunchpadSubmit,
