@@ -1,0 +1,135 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: ReferralContract
+    network: chapel
+    source:
+      address: "0x630E9c0d55d5ce9d49b688D18ACfE29A122Bc5E9"
+      abi: ReferralContract
+      startBlock: 32490372
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - OwnershipTransferred
+        - Referee
+        - UpdateCharity
+        - UpdateFee
+      abis:
+        - name: ReferralContract
+          file: ./abis/ReferralContract.json
+      eventHandlers:
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Referee(address,address,uint256)
+          handler: handleReferee
+        - event: UpdateCharity(address,uint256)
+          handler: handleUpdateCharity
+        - event: UpdateFee(uint256,uint256)
+          handler: handleUpdateFee
+      file: ./src/referral-contract.ts
+  - kind: ethereum
+    name: FactoryContract
+    network: chapel
+    source:
+      address: "0x4e1C00d974f83CBA6F95E3E1DBb13F2fA0d289D0"
+      abi: FactoryContract
+      startBlock: 32490526
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - DmlTokenCreated
+        - FactoryContractOwnershipTransferred
+      abis:
+        - name: FactoryContract
+          file: ./abis/FactoryContract.json
+      eventHandlers:
+        - event: DmlTokenCreated(address,address,address,uint256,address,uint256)
+          handler: handleDmlTokenCreated
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: ./src/factory-contract.ts
+  - kind: ethereum
+    name: RouterContract
+    network: chapel
+    source:
+      address: "0xf0C94656d2A910bd3E3f11522b05A35960bAF3e0"
+      abi: RouterContract
+      startBlock: 32490655
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - MakeLiquidity
+        - MakeTransaction
+        - RouterContractOwnershipTransferred
+      abis:
+        - name: RouterContract
+          file: ./abis/RouterContract.json
+      eventHandlers:
+        - event: MakeLiquidity(string,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,uint256)
+          handler: handleMakeLiquidity
+        - event: MakeTransaction(string,address,address,address,uint256,uint256,uint256,uint256,uint256)
+          handler: handleMakeTransaction
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: ./src/router-contract.ts
+  - kind: ethereum
+    name: CreatorContract
+    network: chapel
+    source:
+      address: "0x77028F609790eF26D492aD088249c202e7CcFddE"
+      abi: CreatorContract
+      startBlock: 32490623
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ApprovalForAll
+        - ChangeUriWithVote
+        - Launchpad
+        - LaunchpadSubmit
+        - MintWithVote
+        - CreatorContractOwnershipTransferred
+        - TransferBatch
+        - TransferSingle
+        - URI
+        - UserVote
+        - VoteMintSubmit
+        - VoteUriSubmit
+      abis:
+        - name: CreatorContract
+          file: ./abis/CreatorContract.json
+      eventHandlers:
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: ChangeUriWithVote(address,string,uint256)
+          handler: handleChangeUriWithVote
+        - event: Launchpad(address,address,uint256,uint256,uint256,uint256)
+          handler: handleLaunchpad
+        - event: LaunchpadSubmit(address,uint256,uint256,uint256,uint256,uint256,uint256,address,uint256,uint256,uint256,uint256,bool,bool,string,bytes,uint256)
+          handler: handleLaunchpadSubmit
+        - event: MintWithVote(address,address,uint256,uint256)
+          handler: handleMintWithVote
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: TransferBatch(indexed address,indexed address,indexed address,uint256[],uint256[])
+          handler: handleTransferBatch
+        - event: TransferSingle(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleTransferSingle
+        - event: URI(string,indexed uint256)
+          handler: handleURI
+        - event: UserVote(address,uint256,uint256,uint256,uint256,bool,uint256)
+          handler: handleUserVote
+        - event: VoteMintSubmit(address,uint256,uint256,uint256,uint256,uint256,uint256,uint256)
+          handler: handleVoteMintSubmit
+        - event: VoteUriSubmit(address,uint256,string,uint256,uint256,uint256,uint256,uint256)
+          handler: handleVoteUriSubmit
+      file: ./src/creator-contract.ts

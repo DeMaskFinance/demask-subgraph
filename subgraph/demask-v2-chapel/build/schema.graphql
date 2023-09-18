@@ -1,0 +1,252 @@
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Referee @entity(immutable: true) {
+  id: Bytes!
+  sponsor: Bytes! # address
+  user: Bytes! # address
+  blockTime: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UpdateCharity @entity(immutable: true) {
+  id: Bytes!
+  charity: Bytes! # address
+  blockTime: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UpdateFee @entity(immutable: true) {
+  id: Bytes!
+  fee: BigInt! # uint256
+  blockTime: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type DmlTokenCreated @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  erc: Bytes! # address
+  nft: Bytes! # address
+  FactoryContract_id: BigInt! # uint256
+  dmlToken: Bytes! # address
+  length: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FactoryContractOwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type MakeLiquidity @entity(immutable: true) {
+  id: Bytes!
+  action: String! # string
+  to: Bytes! # address
+  sender: Bytes! # address
+  dml: Bytes! # address
+  amounttoken: BigInt! # uint256
+  amountnft: BigInt! # uint256
+  fee: BigInt! # uint256
+  liquidity: BigInt! # uint256
+  reserveToken: BigInt! # uint256
+  reserveNFT: BigInt! # uint256
+  blockTime: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MakeTransaction @entity(immutable: true) {
+  id: Bytes!
+  action: String! # string
+  to: Bytes! # address
+  sender: Bytes! # address
+  dml: Bytes! # address
+  amounttoken: BigInt! # uint256
+  amountnft: BigInt! # uint256
+  reserveToken: BigInt! # uint256
+  reserveNFT: BigInt! # uint256
+  blockTime: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RouterContractOwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type ApprovalForAll @entity(immutable: true) {
+  id: Bytes!
+  account: Bytes! # address
+  operator: Bytes! # address
+  approved: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ChangeUriWithVote @entity(immutable: true) {
+  id: Bytes!
+  from: Bytes! # address
+  uri: String! # string
+  timeStamp: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Launchpad @entity(immutable: true) {
+  id: Bytes!
+  to: Bytes! # address
+  token: Bytes! # address
+  CreatorContract_id: BigInt! # uint256
+  bill: BigInt! # uint256
+  amount: BigInt! # uint256
+  timeStamp: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type LaunchpadSubmit @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  CreatorContract_id: BigInt! # uint256
+  initial: BigInt! # uint256
+  totalSell: BigInt! # uint256
+  percentLock: BigInt! # uint256
+  price: BigInt! # uint256
+  priceListing: BigInt! # uint256
+  tokenPayment: Bytes! # address
+  startTime: BigInt! # uint256
+  endTime: BigInt! # uint256
+  durationLock: BigInt! # uint256
+  maxbuy: BigInt! # uint256
+  refundType: Boolean! # bool
+  whiteList: Boolean! # bool
+  url: String! # string
+  data: Bytes! # bytes
+  timeStamp: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MintWithVote @entity(immutable: true) {
+  id: Bytes!
+  from: Bytes! # address
+  receiver: Bytes! # address
+  totalMint: BigInt! # uint256
+  timeStamp: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CreatorContractOwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type TransferBatch @entity(immutable: true) {
+  id: Bytes!
+  operator: Bytes! # address
+  from: Bytes! # address
+  to: Bytes! # address
+  ids: [BigInt!]! # uint256[]
+  values: [BigInt!]! # uint256[]
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type TransferSingle @entity(immutable: true) {
+  id: Bytes!
+  operator: Bytes! # address
+  from: Bytes! # address
+  to: Bytes! # address
+  CreatorContract_id: BigInt! # uint256
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type URI @entity(immutable: true) {
+  id: Bytes!
+  value: String! # string
+  CreatorContract_id: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UserVote @entity(immutable: true) {
+  id: Bytes!
+  voter: Bytes! # address
+  option: BigInt! # uint256
+  CreatorContract_id: BigInt! # uint256
+  count: BigInt! # uint256
+  amount: BigInt! # uint256
+  status: Boolean! # bool
+  timeStamp: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type VoteMintSubmit @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  CreatorContract_id: BigInt! # uint256
+  startTime: BigInt! # uint256
+  endTime: BigInt! # uint256
+  totalMint: BigInt! # uint256
+  currentSupply: BigInt! # uint256
+  count: BigInt! # uint256
+  timeStamp: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type VoteUriSubmit @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  CreatorContract_id: BigInt! # uint256
+  uri: String! # string
+  startTime: BigInt! # uint256
+  endTime: BigInt! # uint256
+  currentSupply: BigInt! # uint256
+  count: BigInt! # uint256
+  timeStamp: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

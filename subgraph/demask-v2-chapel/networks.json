@@ -1,0 +1,20 @@
+{
+  "chapel": {
+    "ReferralContract": {
+      "address": "0x630E9c0d55d5ce9d49b688D18ACfE29A122Bc5E9",
+      "startBlock": 32490372
+    },
+    "FactoryContract": {
+      "address": "0x4e1C00d974f83CBA6F95E3E1DBb13F2fA0d289D0",
+      "startBlock": 32490526
+    },
+    "RouterContract": {
+      "address": "0xf0C94656d2A910bd3E3f11522b05A35960bAF3e0",
+      "startBlock": 32490655
+    },
+    "CreatorContract": {
+      "address": "0x77028F609790eF26D492aD088249c202e7CcFddE",
+      "startBlock": 32490623
+    }
+  }
+}

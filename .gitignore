@@ -1,4 +1,5 @@
 /subgraph/demask-v2-mumbai/node_modules
 /subgraph/demask-v2-chapel/node_modules
 /subgraph/demask-v2-mumbai-2/
-/subgraph/demask-v2-chapel/
+#/subgraph/demask-v2-chapel/
+/subgraph/demask-v2-mumbai/
